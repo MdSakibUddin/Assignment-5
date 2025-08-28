@@ -12,21 +12,20 @@ for (let btn of heartButtons) {
 // Heart section functionality ends
 
 // Call and Coins section functionality starts
-let coinCount = document.getElementById("count-coin");
-let coins = parseInt(coinCount.innerText);
+let coinCount = parseInt(document.getElementById("count-coin").innerText);
 let serviceName = document.getElementsByClassName("service-name");
 let serviceNumber = document.getElementsByClassName("service-number");
 //getting all call btns with by using classname
 const callButtons = document.getElementsByClassName("btn-call");
-for (let coins of callButtons) {
-  callButtons.addEventListener("click", function () {
-    if (coins >= 20) {
-      coins -= 20;
-      coinCount.innerText = coins;
-      alert("Calling" + serviceName + "at" + serviceNumber);
-    } else {
-      alert("You do not have enough coins to make a call");
-    }
+for (let i = 0; i < callButtons.length; i++) {
+  callButtons[i].addEventListener("click", function () {
+    const getName = serviceName[i].innerText;
+    const getNumber = serviceNumber[i].innerText;
+    if (coinCount >= 20) {
+      coinCount -= 20;
+      document.getElementById("count-coin").innerText = coinCount;
+      alert("Calling " + getName + " at " + getNumber);
+    } else alert("You do not have enough coin");
   });
 }
 
