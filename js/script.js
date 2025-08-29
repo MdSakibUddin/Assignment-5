@@ -25,12 +25,13 @@ for (let i = 0; i < callButtons.length; i++) {
       coinCount -= 20;
       document.getElementById("count-coin").innerText = coinCount;
       alert("✅" + "Calling " + getName + " at " + getNumber + "...");
-    } else alert("You do not have enough coins");
+    } else alert("❌ You do not have 20 coins to make a call");
   });
 }
 // Call and Coins section functionality ends
 
 // copy button, copy every service number and copy count functionality starts
+
 let copyCount = parseInt(document.getElementById("copy-count").innerText);
 let copyButton = document.getElementsByClassName("btn-copy");
 let serviceNumbers = document.getElementsByClassName("service-number");
@@ -41,16 +42,18 @@ for (let btn of copyButton) {
     copyCount = copyCount + 1;
     document.getElementById("copy-count").innerText = copyCount;
     // copy service number at the same index
-    let numberToCopy = serviceNumbers[currentIndex].innerText;
-    navigator.clipboard.writeText(numberToCopy);
+    let numberCopy = serviceNumbers[currentIndex].innerText;
+    navigator.clipboard.writeText(numberCopy);
     //showing alert
-    alert(`Number ${numberToCopy} has been copied successfully ✅`);
+    alert(`Number ${numberCopy} has been copied successfully ✅`);
   });
   index++;
 }
+
 // copy button and copy count functionality ends
 
 //Functionality of call history starts
+
 const callHistory = []; // to store all call entries
 const callBtn = document.getElementsByClassName("btn-call");
 const serviceNames = document.getElementsByClassName("service-name");
