@@ -15,8 +15,8 @@
 <body class="">
     <header>
         <!-- Navbar section starts -->
-         <nav class="bg-white flex justify-between items-center pt-5 pb-5 pl-10 pr-10">
-            <div class="flex items-center">
+         <nav class="bg-white flex md:flex-row flex-col justify-between items-center p-4 md:p-6 pl-10 pr-10">
+            <div class="flex items-center md:mb-0 mb-4 ">
                 <img class="h-[50px] w-[50px]" src="./assets/logo.png" alt="">
                 <h1 class="text-[#006747] hind-madurai-extrabold text-2xl ml-3">Emergency <br> Service</h1>
             </div>
@@ -38,14 +38,14 @@
 
         <!-- Hero Section Starts -->
          <section
-         class="h-[220px] bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] flex flex-col justify-center items-center text-white">
-         <img class="h-[92px] w-[92px]" src="./assets/logo-dark.png" alt="">
-         <h1 class="hind-madurai-bold text-xl mt-2">Emergency Service Directory</h1>
-         <p class="hind-madurai-semibold text-lg mt-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+         class="h-[220px] md:h-[280px] bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] flex flex-col justify-center items-center text-white">
+         <img class="md:h-[92px] md:w-[92px] h-[46px] w-[46px]" src="./assets/logo-dark.png" alt="">
+         <h1 class="hind-madurai-bold md:text-xl text-lg mt-2">Emergency Service Directory</h1>
+         <p class="hind-madurai-semibold md:text-lg text-md text-center mt-2 md:p-0 p-4">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
          </section>
         <!-- Hero Section Ends -->
     </header>
-    <main class="bg-[#f5fff6]">
+    <main class="bg-[#f5fff6] min-h-screen">
         <!-- Card whole section starts -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-5 p-5 gap-5">
             <!-- Card-1 div  -->
@@ -61,7 +61,7 @@
                     <h2 class="service-number hind-madurai-bold text-3xl mt-5">999</h2>
                 <div class="bg-[#f2f2f2] w-1/4 flex justify-center items-center rounded-3xl mt-1">
                     <p>All</p>
-            </div>
+                </div>
             </div>
 
             <div class="w-full flex mt-5 gap-3">
@@ -103,7 +103,7 @@
             <!-- Card-3 div  -->
             <div class="drop-shadow-lg p-8 bg-white rounded-2xl">
                 <div class="flex justify-between items-center">
-                    <img class="w-[32px] h-[32px]" src="./assets/fire-service.png" alt="">
+                    <img class="w-[32px] h-[32px] bg-[#ffe3e2] p-1 rounded-lg" src="./assets/fire-service.png" alt="">
                     <i class="btn-heart fa-regular fa-heart cursor-pointer"></i>
                 </div>
 
@@ -127,41 +127,20 @@
             </div>
             </div>
             <!-- Card-4 div  -->
-            <div class="drop-shadow-lg p-5 bg-white rounded-2xl row-span-3 ">
-             <div class="flex justify-between items-center mb-5">
-                <p class="hind-madurai-bold"><i class="fa-solid fa-clock"></i> Call History</p>
-                <button class="btn-clear bg-[#00a63e] text-white py-2 px-4 rounded-3xl hind-madurai-semibold cursor-pointer">Clear</button>
-             </div>
-             <div>
-                <div class="flex justify-between items-center bg-[#fafafa] px-3 py-3 rounded-lg mb-3">
-                    <div>
-                        <h1 class="hind-madurai-bold">Fire Service Number</h1>
-                        <p class="text-[#5c5c5c]">999</p>
-                    </div>
-                    <p class="text-black">11:36:58 AM</p>
+            <div class="drop-shadow-lg p-5 bg-white rounded-2xl row-span-3 md:order-none order-first">
+                <div class="flex justify-between items-center mb-5">
+                    <p class="hind-madurai-bold"><i class="fa-solid fa-clock"></i> Call History</p>
+                    <button id="btn-clear" class="bg-[#00a63e] text-white py-2 px-4 rounded-3xl hind-madurai-semibold cursor-pointer">Clear</button>
                 </div>
-                <div class="flex justify-between items-center bg-[#fafafa] px-3 py-3 rounded-lg mb-3">
-                    <div>
-                        <h1 class="hind-madurai-bold">Fire Service Number</h1>
-                        <p class="text-[#5c5c5c]">999</p>
-                    </div>
-                    <p class="text-black">11:36:58 AM</p>
+                <div id="call-history-data">
+                <!-- Dynamic call history data will be appended here -->
                 </div>
-                <div class="flex justify-between items-center bg-[#fafafa] px-3 py-3 rounded-lg ">
-                    <div>
-                        <h1 class="hind-madurai-bold">Fire Service Number</h1>
-                        <p class="text-[#5c5c5c]">999</p>
-                    </div>
-                    <p class="text-black">11:36:58 AM</p>
-                </div>
-             </div>
-            
-            </div>
+            </div> 
 
             <!-- Card-5 div  -->
             <div class="drop-shadow-lg p-8 bg-white rounded-2xl">
                 <div class="flex justify-between items-center">
-                    <img class="w-[32px] h-[32px]" src="./assets/emergency.png" alt="">
+                    <img class="w-[32px] h-[32px] bg-[#ffe3e2] p-1 rounded-lg" src="./assets/ambulance.png" alt="">
                     <i class="btn-heart fa-regular fa-heart cursor-pointer"></i>
                 </div>
 

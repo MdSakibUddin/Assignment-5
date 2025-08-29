@@ -24,7 +24,7 @@ for (let i = 0; i < callButtons.length; i++) {
     if (coinCount >= 20) {
       coinCount -= 20;
       document.getElementById("count-coin").innerText = coinCount;
-      alert("Calling " + getName + " at " + getNumber + "...");
+      alert("✅" + "Calling " + getName + " at " + getNumber + "...");
     } else alert("You do not have enough coins");
   });
 }
@@ -49,3 +49,47 @@ for (let btn of copyButton) {
   index++;
 }
 // copy button and copy count functionality ends
+
+//Functionality of call history starts
+const callHistory = []; // to store all call entries
+const callBtn = document.getElementsByClassName("btn-call");
+const serviceNames = document.getElementsByClassName("service-name");
+const serviceNum = document.getElementsByClassName("service-number");
+const callHistoryContainer = document.getElementById("call-history-data");
+const clearBtn = document.getElementById("btn-clear");
+// Add call history entry when a call button is clicked
+for (let i = 0; i < callBtn.length; i++) {
+  callBtn[i].addEventListener("click", function () {
+    const name = serviceNames[i].innerText;
+    const number = serviceNum[i].innerText;
+
+    // create call entry
+    const callEntry = {
+      name: name,
+      number: number,
+      time: new Date().toLocaleTimeString(), // directly get current time
+    };
+
+    // push into history array
+    callHistory.push(callEntry);
+
+    // add to HTML
+    const div = document.createElement("div");
+    div.className =
+      "flex justify-between items-center bg-[#fafafa] p-3 rounded-lg my-2";
+    div.innerHTML = `
+      <div>
+        <p class="font-semibold p-2">${callEntry.name}</p>
+        <p class="text-[#5c5c5c] pl-2">${callEntry.number}</p>
+      </div>
+      <p>${callEntry.time}</p>
+    `;
+    callHistoryContainer.appendChild(div);
+  });
+}
+// Functionality of call history ends
+
+// Clear history Functionality
+clearBtn.addEventListener("click", function () {
+  callHistoryContainer.innerHTML = "";
+});
